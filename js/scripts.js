@@ -2,10 +2,6 @@ function Player(mark){
   this.mark = mark
 };
 
-function Space(number){
-  this.number = number
-};
-
 function Game(player1, player2, turn){
   this.player1 = player1;
   this.player2 = player2;
