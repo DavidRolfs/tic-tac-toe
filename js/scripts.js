@@ -61,50 +61,15 @@ $(document).ready(function(){
   var board = [[],[],[],[],[],[],[],[],[]];
   var newGame = new Game(player1, player2, turn, board);
 
-  //console.log(newGame);
   $("div").click(function(){
     if($(this).html()===""){
     clicked = $(this)[0].id;
     clicked = parseInt(clicked);
-
-      //if(!($("#"+ clicked))){
-        board[clicked].push(newGame.turn);
-        $("#" + clicked).text(newGame.turn);
-      //}
-
-    // if(!($("#" + clicked).val()){
-    //
-    //
-    //
-    // }
-
-
+    board[clicked].push(newGame.turn);
+    $("#" + clicked).text(newGame.turn);
     newGame.winCheck(board);
-
-
-    //  newGame.winCheck(clickCount);
-     //console.log(newGame.turn);
-
-
-
-    //call board.prototype.check function
-
-    // console.log(spaceNumber.number);
-
-
     newGame.switchTurn();
   }
-    //console.log(newGame.turn);
+
   });
-
 });
-
-//for loop to go through newGame.boardspaces
-// for(var i = 0; i < board.length; i++){
-//   console.log(board[i]);
-// }
-//
-// }
-
-
-  // this.win = player game prototype
