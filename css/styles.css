@@ -1,0 +1,14 @@
+img{
+  width: 50%;
+}
+
+
+#snake{
+  display: none;
+}
+#turtle{
+  display: none;
+}
+#tiger{
+  display: none;
+}
