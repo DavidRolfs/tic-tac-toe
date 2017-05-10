@@ -26,29 +26,29 @@ Game.prototype.winCheck = function(board){
     if(board[0][0] === board[1][0] && board[0][0] === board[2][0]){
       alert(this.turn + "Wins");
     } else if(board[0][0] === board[3][0] && board[0][0] === board[6][0]){
-        alert(this.turn + "wins")
+        alert(this.turn + "wins");
     } else if(board[0][0] === board[4][0] && board[0][0] === board[8][0]) {
-      alert(this.turn + "wins")
+      alert(this.turn + "wins");
     }
   }
-  else if (board[5][0] === "X" || board[5][0]==="O"){
+  if (board[5][0] === "X" || board[5][0]==="O"){
     if (board[5][0] === board[4][0] && board[5][0] === board[3][0]){
-      alert (this.turn + "wins")
+      alert (this.turn + "wins");
     } else if (board[5][0] === board[2][0] && board[5][0] === board[8][0]){
-      alert (this.turn + "wins")
+      alert (this.turn + "wins");
     }
 
   }
-  else if (board[7][0] === "X" || board[7][0]==="O"){
+  if (board[7][0] === "X" || board[7][0]==="O"){
     if (board[7][0] === board[4][0] && board[7][0] === board[1][0]){
-      alert (this.turn + "wins")
+      alert (this.turn + "wins");
     }else if (board[7][0] === board[6][0] && board[7][0] === board[8][0]){
-      alert (this.turn + "wins")
+      alert (this.turn + "wins");
     }
   }
-  else if (board[2][0] === "X" || board[2][0]==="O"){
+  if (board[2][0] === "X" || board[2][0]==="O"){
     if (board[2][0] === board[4][0] && board[2][0] === board[6][0]){
-      alert (this.turn + "wins")
+      alert (this.turn + "wins");
     }
   }
 }
