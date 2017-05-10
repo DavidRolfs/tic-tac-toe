@@ -63,15 +63,22 @@ $(document).ready(function(){
 
   //console.log(newGame);
   $("div").click(function(){
+    if($(this).html()===""){
     clicked = $(this)[0].id;
-    console.log(clicked)
     clicked = parseInt(clicked);
-    //mark this.space with current player.mark
-     //console.log(newGame.boardspaces[clicked])
-    //  if(newGame.boardspaces[clicked] === []){
-    board[clicked].push(newGame.turn);
-    $("#" + clicked).text(newGame.turn);
-    //  }
+
+      //if(!($("#"+ clicked))){
+        board[clicked].push(newGame.turn);
+        $("#" + clicked).text(newGame.turn);
+      //}
+
+    // if(!($("#" + clicked).val()){
+    //
+    //
+    //
+    // }
+
+
     newGame.winCheck(board);
 
 
@@ -86,6 +93,7 @@ $(document).ready(function(){
 
 
     newGame.switchTurn();
+  }
     //console.log(newGame.turn);
   });
 
