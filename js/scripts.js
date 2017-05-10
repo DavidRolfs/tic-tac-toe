@@ -6,11 +6,11 @@ function Space(number){
   this.number = number
 };
 
-function Game(player1, player2, turn, board){
+function Game(player1, player2, turn){
   this.player1 = player1;
   this.player2 = player2;
   this.turn = turn;
-  this.boardspaces = board;
+
 };
 
 Game.prototype.switchTurn = function(){
@@ -21,37 +21,63 @@ Game.prototype.switchTurn = function(){
   }
 }
 
-Game.prototype.winCheck = function(clickCount){
+Game.prototype.winCheck = function(board){
+  if (board[0][0] === "X" || board[0][0]==="O"){
+    if(board[0][0] === board[1][0] && board[0][0] === board[2][0]){
+      alert(this.turn + "Wins");
+    } else if(board[0][0] === board[3][0] && board[0][0] === board[6][0]){
+        alert(this.turn + "wins")
+    } else if(board[0][0] === board[4][0] && board[0][0] === board[8][0]) {
+      alert(this.turn + "wins")
+    }
+  }
+  else if (board[5][0] === "X" || board[5][0]==="O"){
+    if (board[5][0] === board[4][0] && board[5][0] === board[3][0]){
+      alert (this.turn + "wins")
+    } else if (board[5][0] === board[2][0] && board[5][0] === board[8][0]){
+      alert (this.turn + "wins")
+    }
 
-
+  }
+  else if (board[7][0] === "X" || board[7][0]==="O"){
+    if (board[7][0] === board[4][0] && board[7][0] === board[1][0]){
+      alert (this.turn + "wins")
+    }else if (board[7][0] === board[6][0] && board[7][0] === board[8][0]){
+      alert (this.turn + "wins")
+    }
+  }
+  else if (board[2][0] === "X" || board[2][0]==="O"){
+    if (board[2][0] === board[4][0] && board[2][0] === board[6][0]){
+      alert (this.turn + "wins")
+    }
+  }
 }
-
-
-  // this.win = player game prototype
 
 $(document).ready(function(){
   var player1 = new Player("X");
   var player2 = new Player("O");
   var turn = player1.mark;
-  // var board = ["space1","space2","space3","space4","space5","space6","space7","space8","space9"];
+
   var board = [[],[],[],[],[],[],[],[],[]];
   var newGame = new Game(player1, player2, turn, board);
-  var clickCount = 0;
+
   //console.log(newGame);
   $("div").click(function(){
     clicked = $(this)[0].id;
+    console.log(clicked)
     clicked = parseInt(clicked);
-    clickCount++;
     //mark this.space with current player.mark
      //console.log(newGame.boardspaces[clicked])
-     newGame.boardspaces[clicked].push(newGame.turn);
+    //  if(newGame.boardspaces[clicked] === []){
+    board[clicked].push(newGame.turn);
+    $("#" + clicked).text(newGame.turn);
+    //  }
+    newGame.winCheck(board);
 
-     newGame.winCheck(clickCount);
-     console.log(newGame.turn);
-     console.log(newGame.winCheck(clickCount));
 
+    //  newGame.winCheck(clickCount);
+     //console.log(newGame.turn);
 
-     console.log(clickCount);
 
 
     //call board.prototype.check function
@@ -64,3 +90,13 @@ $(document).ready(function(){
   });
 
 });
+
+//for loop to go through newGame.boardspaces
+// for(var i = 0; i < board.length; i++){
+//   console.log(board[i]);
+// }
+//
+// }
+
+
+  // this.win = player game prototype

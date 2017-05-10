@@ -1,14 +1,11 @@
-img{
-  width: 50%;
-}
-
-
-#snake{
-  display: none;
-}
-#turtle{
-  display: none;
-}
-#tiger{
-  display: none;
+.cell {
+    float:left;
+    width: 200px;
+    height: 200px;
+    padding-bottom: 30px; /* = width for a 1:1 aspect ratio */
+    margin:3px;
+    background-color: #f49e42;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 950%;
 }
