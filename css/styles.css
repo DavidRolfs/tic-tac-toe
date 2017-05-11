@@ -1,17 +1,28 @@
+h1, radio {
+  font-family: 'Anton', sans-serif;
+}
+
+
 .cell {
     float:left;
     width: 200px;
     height: 200px;
     padding-bottom: 30px; /* = width for a 1:1 aspect ratio */
     margin:3px;
-    background-color: green;
+    background-color: #508AA8;
     border: 1px solid black;
     text-align: center;
     font-size: 950%;
+    font-family: 'Anton', sans-serif;
 }
-.cell:hover{
-  background-color: red;
+.cell:hover {
+  background-color: #BA1200;
 }
 .tracker {
   float: right;
+}
+
+.radio {
+  font-family: 'Anton', sans-serif;
+
 }

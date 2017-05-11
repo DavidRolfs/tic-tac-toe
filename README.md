@@ -16,15 +16,23 @@ This web application is a classic game of Tic-Tac-Toe built from scratch.  A win
 | Programs replaces numbers divisible by 15 with "ping-pong" | 15 | 1...13,14,ping-pong |
 
 ## Gh-pages
-https://davidrolfs.github.io/intro-week-3-code-review-ping-pong/
+https://davidrolfs.github.io/tic-tac-toe
+
+https://JMFritz.github.io/tic-tac-toe
+
 
 ## Setup/Installation Requirements
 
-* Go to Github repository page at https://github.com/DavidRolfs/intro-week-3-code-review-ping-pong
+* Go to Github repository page at https://github.com/JMFritz/tic-tac-toe or https://github.com/DavidRolfs/tic-tac-toe
 * Click the "download or clone" button and copy the link.
 * In your computers terminal type "git clone" & paste the copied link.
 * Once downloaded you can open the index.html file in the browser of your choice.
 * You can view the code using the text editor of your choice as well.
+
+
+## Known bugs
+* when computer (player O) wins it says player X wins.
+
 
 ## Support and contact details
 

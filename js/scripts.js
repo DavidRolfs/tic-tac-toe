@@ -125,8 +125,9 @@ $(document).ready(function(){
   //README update
 $("form#form").submit(function(event){
     event.preventDefault();
-      board = [[],[],[],[],[],[],[],[],[]];
-      $(".cell").html("");
-      $(".winner").text("");
-  });
+    location.reload();
+    //   board = [[],[],[],[],[],[],[],[],[]];
+    //  $(".cell").html("");
+    //  $(".winner").text("");
+   });
 });
