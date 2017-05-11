@@ -10,10 +10,11 @@ This web application is a classic game of Tic-Tac-Toe built from scratch.  A win
 
 | Description  | Input Example | Output Example |
 | ------------- | ------------- | ------------- |
-| Counts up to the number provided | 3 | 1, 2, 3 |
-| Programs replaces numbers divisible by 3 with "ping" | 3 | 1, 2, ping |
-| Programs replaces numbers divisible by 5 with "pong" | 5 | 1,2,ping,4,pong |
-| Programs replaces numbers divisible by 15 with "ping-pong" | 15 | 1...13,14,ping-pong |
+| Place a player's mark on the clicked space| on click | "X" |
+| Switch players after each click, from player one to player two (vise-versa) | on click | "O" |
+| Check to see if there's a winner after each click | "OOO" | "Winner!" |
+| Reset board after winner is declared on button click | on click | "" |
+| Add "artificial intelligence" to play against computer with random selection |  |  |
 
 ## Gh-pages
 https://davidrolfs.github.io/tic-tac-toe
