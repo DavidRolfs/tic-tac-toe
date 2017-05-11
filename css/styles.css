@@ -12,3 +12,6 @@
 .cell:hover{
   background-color: red;
 }
+.tracker {
+  float: right;
+}
