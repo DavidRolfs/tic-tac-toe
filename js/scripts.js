@@ -54,71 +54,79 @@ $(document).ready(function(){
   var player2 = new Player("O");
   var turn = player1.mark;
 
+  var gamePlay
   var board = [[],[],[],[],[],[],[],[],[]];
   var newGame = new Game(player1, player2, turn, board);
   $(".turn").text(newGame.turn);
 
+  $(".radio").click(function(){
+   gamePlay = $("input:radio[name=gamePlay]:checked").val();
+//});
+
+
   //TwoPlayer
-  // $("div").click(function(){
-  //   if($(this).html()===""){
-  //   clicked = $(this)[0].id;
-  //   clicked = parseInt(clicked);
-  //   board[clicked].push(newGame.turn);
-  //   $("#" + clicked).text(newGame.turn);
-  //   if (newGame.winCheck(board)){
-  //     $(".winner").text(newGame.winCheck(board) + " is the WINNER!");
-  //   }
-  //   newGame.switchTurn();
-  //   $(".turn").text(newGame.turn + "'s Move");
-  // }
-  //
-  // });
+  if(gamePlay === "twoPlayer") {
+    $("div").click(function(){
+      if($(this).html()===""){
+      clicked = $(this)[0].id;
+      clicked = parseInt(clicked);
+      board[clicked].push(newGame.turn);
+      $("#" + clicked).text(newGame.turn);
+      if (newGame.winCheck(board)){
+        $(".winner").text(newGame.winCheck(board) + " is the WINNER!");
+      }
+      newGame.switchTurn();
+      $(".turn").text(newGame.turn + "'s Move");
+    }
+    });
+   }
+
+
 
   //PlayComputer
-  $("div").click(function(){
-    if($(this).html()===""){
-    clicked = $(this)[0].id;
-    clicked = parseInt(clicked);
-    board[clicked].push(newGame.turn);
-    $("#" + clicked).text(newGame.turn);
-    Somthing();
+   else if (gamePlay === "computer"){
+    $("div").click(function(){
+      if($(this).html()===""){
+      clicked = $(this)[0].id;
+      clicked = parseInt(clicked);
+      board[clicked].push(newGame.turn);
+      $("#" + clicked).text(newGame.turn);
+      Somthing();
 
-    function Somthing(){
-      var randomNumber = Math.floor((Math.random() * 8) + 1);
-        console.log(board[randomNumber]);
-        newGame.switchTurn();
-      if(!(board[randomNumber][0])){
-        board[randomNumber].push(newGame.turn);
-        //newGame.switchTurn();
-        // setTimeout(function(){
+      function Somthing(){
+        var randomNumber = Math.floor((Math.random() * 8) + 1);
+          console.log(board[randomNumber]);
+          newGame.switchTurn();
+        if(!(board[randomNumber][0])){
+          board[randomNumber].push(newGame.turn);
+          //newGame.switchTurn();
+          // setTimeout(function(){
 
-          $("#" + randomNumber).text(newGame.turn);newGame.switchTurn();
-            if (newGame.winCheck(board)){
-              $(".winner").text(newGame.winCheck(board) + " is the WINNER!");
-            }
+            $("#" + randomNumber).text(newGame.turn);newGame.switchTurn();
+              if (newGame.winCheck(board)){
+                $(".winner").text(newGame.winCheck(board) + " is the WINNER!");
+              }
 
-        // }, 1000);
+          // }, 1000);
 
-      }else{
-                newGame.switchTurn();
-        Somthing();
+        }else{
+                  newGame.switchTurn();
+          Somthing();
+        }
       }
-
     }
-  }
+    });
+   }
+});
 
-  });
 
   //CSS Styling
   //Add AI feature
   //README update
 $("form#form").submit(function(event){
     event.preventDefault();
-    //alert('works')
       board = [[],[],[],[],[],[],[],[],[]];
       $(".cell").html("");
       $(".winner").text("");
-
-
   });
 });
