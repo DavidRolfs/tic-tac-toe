@@ -59,35 +59,55 @@ $(document).ready(function(){
   $(".turn").text(newGame.turn);
 
   //TwoPlayer
-  $("div").click(function(){
-    if($(this).html()===""){
-    clicked = $(this)[0].id;
-    clicked = parseInt(clicked);
-    board[clicked].push(newGame.turn);
-    $("#" + clicked).text(newGame.turn);
-    if (newGame.winCheck(board)){
-      $(".winner").text(newGame.winCheck(board) + " is the WINNER!");
-    }
-    newGame.switchTurn();
-    $(".turn").text(newGame.turn + "'s Move");
-  }
-
-  });
-
-  // //PlayComputer
   // $("div").click(function(){
   //   if($(this).html()===""){
   //   clicked = $(this)[0].id;
   //   clicked = parseInt(clicked);
   //   board[clicked].push(newGame.turn);
   //   $("#" + clicked).text(newGame.turn);
-  //
-  //   var randomNumber = Math.floor((Math.random() * 8) + 1);
-  //   console.log(randomNumber)
-  //
-  //
+  //   if (newGame.winCheck(board)){
+  //     $(".winner").text(newGame.winCheck(board) + " is the WINNER!");
+  //   }
+  //   newGame.switchTurn();
+  //   $(".turn").text(newGame.turn + "'s Move");
+  // }
   //
   // });
+
+  //PlayComputer
+  $("div").click(function(){
+    if($(this).html()===""){
+    clicked = $(this)[0].id;
+    clicked = parseInt(clicked);
+    board[clicked].push(newGame.turn);
+    $("#" + clicked).text(newGame.turn);
+    Somthing();
+
+    function Somthing(){
+      var randomNumber = Math.floor((Math.random() * 8) + 1);
+        console.log(board[randomNumber]);
+        newGame.switchTurn();
+      if(!(board[randomNumber][0])){
+        board[randomNumber].push(newGame.turn);
+        //newGame.switchTurn();
+        // setTimeout(function(){
+
+          $("#" + randomNumber).text(newGame.turn);newGame.switchTurn();
+            if (newGame.winCheck(board)){
+              $(".winner").text(newGame.winCheck(board) + " is the WINNER!");
+            }
+
+        // }, 1000);
+
+      }else{
+                newGame.switchTurn();
+        Somthing();
+      }
+
+    }
+  }
+
+  });
 
   //CSS Styling
   //Add AI feature
